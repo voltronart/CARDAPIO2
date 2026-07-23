@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Hortaliças</title>
+
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/cards.css">
+
+  <script src="/js/cards.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <div class="nav__brand">
+        <img src="assets/img/logo.png" alt="Hortaliças JOGI" class="nav__logo">
+        <span class="nav__title">HORTALIÇAS JOGI</span>
+      </div>
+
+      <div class="nav__search">
+        <input type="text" placeholder="Pesquisar produtos..." aria-label="Pesquisar produtos">
+      </div>
+
+      <div class="nav__status">
+        <span class="nav-time">Seg-Sáb • 08:00 às 18:00</span>
+        <span class="nav__open open">Aberto agora</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="products-section">
+    <div class="products-container" id="productContainer"></div>
+  </section>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h2>Seu Carrinho</h2>
+      <button class="cart-drawer__close" id="closeCart" type="button">✕</button>
+    </div>
+
+    <div class="cart-drawer__body">
+      <div id="cartItems" class="cart-items"></div>
+
+      <form class="checkout-form" id="checkoutForm">
+        <h3>Dados do cliente</h3>
+
+        <input type="text" id="clientName" placeholder="Seu nome" required>
+        <input type="tel" id="clientPhone" placeholder="Seu telefone" required>
+        <input type="text" id="clientAddress" placeholder="Seu endereço" required>
+
+        <h3>Forma de pagamento</h3>
+        <select id="paymentMethod" required>
+          <option value="">Selecione</option>
+          <option value="pix">PIX</option>
+          <option value="cartao">Cartão</option>
+          <option value="dinheiro">Dinheiro</option>
+        </select>
+
+        <div class="cart-summary">
+          <p>Total: <strong id="cartTotal">R$ 0,00</strong></p>
+          <p>Itens: <strong id="cartCount">0</strong></p>
+        </div>
+
+        <button type="submit" class="checkout-btn">Finalizar pedido</button>
+      </form>
+    </div>
+  </aside>
+
+</body>
+</html>
